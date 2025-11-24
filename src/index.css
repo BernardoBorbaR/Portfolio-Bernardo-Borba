@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 95%;
+    --primary-foreground: 0 0% 10%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 0 0% 85%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 0 0% 90%;
+
+    --radius: 0.75rem;
+    
+    --black: 0 0% 5%;
+    --dark-gray: 0 0% 15%;
+    --white: 0 0% 95%;
+    --light-gray: 0 0% 85%;
+    --mid-gray: 0 0% 60%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 95%) 0%, hsl(0 0% 75%) 100%);
+    --glow-white: 0 0 40px hsl(0 0% 95% / 0.2);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .light {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 0 0% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
+    --ring: 0 0% 20%;
+
+    --black: 0 0% 98%;
+    --dark-gray: 0 0% 90%;
+    --white: 0 0% 10%;
+    --light-gray: 0 0% 20%;
+    --mid-gray: 0 0% 40%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 10%) 0%, hsl(0 0% 30%) 100%);
+    --glow-white: 0 0 40px hsl(0 0% 10% / 0.1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  
+  .font-mono {
+    font-family: 'Fira Code', 'Courier New', monospace;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-white to-light-gray bg-clip-text text-transparent;
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--white) / 0.3);
+  }
+  
+  .card-glow {
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+    transition: var(--transition-smooth);
+  }
+  
+  .card-glow:hover {
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1);
+    transform: translateY(-4px);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
